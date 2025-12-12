@@ -1,0 +1,180 @@
+
+body {
+  font-family: 'Consolas', monospace;
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d url('background.png') no-repeat center center;
+  background-size: cover;
+  color: #f0f0f0;
+}
+
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.month-sidebar {
+  width: 120px;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.month-sidebar .month-item {
+  width: 90%;
+  padding: 8px;
+  margin: 5px 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #222;
+  transition: 0.2s;
+}
+
+.month-sidebar .month-item.completed {
+  background: #00bfff;
+  color: #0d0d0d;
+}
+
+.month-sidebar .month-item.current {
+  border: 2px solid #00bfff;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.month-nav button {
+  background: #222;
+  border: none;
+  color: #00bfff;
+  font-size: 20px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.month-nav button:hover {
+  background: #00bfff;
+  color: #111;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #00bfff;
+}
+
+
+.circle-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.progress-ring__circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 502.65;
+  stroke-dashoffset: 502.65;
+  transition: stroke-dashoffset 0.5s linear;
+  stroke-linecap: round;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(6, 50px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.day {
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.day.completed {
+  background-color: #00bfff;
+  color: #0d0d0d;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+
+button#resetBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff4d4d;
+  color: #0d0d0d;
+  transition: 0.2s;
+}
+
+button#resetBtn:hover {
+  background-color: #ff1a1a;
+}
+
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .month-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  .month-sidebar .month-item {
+    margin: 0 5px;
+  }
+  #grid {
+    grid-template-columns: repeat(5, 45px);
+    grid-gap: 8px;
+  }
+  .circle-container {
+    width: 150px;
+    height: 150px;
+  }
+}

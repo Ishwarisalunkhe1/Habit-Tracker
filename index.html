@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishwari's Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+
+        <div class="month-sidebar" id="monthSidebar"></div>
+
+
+        <div class="main-content">
+            <div class="month-nav">
+                <button id="prevMonth">&lt;</button>
+                <div id="monthYear"></div>
+                <button id="nextMonth">&gt;</button>
+            </div>
+
+            <h1>30-Day Tracker🙏</h1>
+
+
+            <div class="circle-container">
+                <svg class="progress-ring" width="180" height="180">
+                    <circle class="progress-ring__circle" stroke="#00bfff" stroke-width="12" fill="transparent" r="80"
+                        cx="90" cy="90" />
+                </svg>
+                <div class="circle-text">0%</div>
+            </div>
+
+
+            <div id="grid"></div>
+
+
+            <button id="resetBtn">Reset Month</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
